@@ -1,0 +1,81 @@
+baseURL: https://splendid-taiyaki-c24dd8.netlify.app
+canonifyURLs: yes
+relativeURLs: yes
+uglyURLs: no
+theme: hugo-theme-relearn
+languageCode: en
+defaultContentLanguage: en
+title: Hugo Relearn Documentation
+outputs:
+  home:
+    - HTML
+    - RSS
+    - PRINT
+    - SEARCH
+    - SEARCHPAGE
+  page:
+    - HTML
+    - RSS
+    - PRINT
+  section:
+    - HTML
+    - RSS
+    - PRINT
+markup:
+  goldmark:
+    renderer:
+      unsafe: yes
+  highlight:
+    guessSyntax: no
+    noClasses: no
+server:
+  headers:
+    - for: '**.html'
+      values:
+        X-UA-Compatible: IE=edge
+languages:
+  en:
+    languageName: Русский
+    menu:
+    params:
+      landingPageName: <i class='fas fa-home'></i> Информация о лаборатории
+      weight: 10
+    title: Информация о лаборатории
+    weight: 1
+  pir:
+    languageName: Зеркальный
+module:
+  mounts:
+    - source: archetypes
+      target: archetypes
+    - source: assets
+      target: assets
+    - source: content
+      target: content
+    - source: data
+      target: data
+    - source: i18n
+      target: i18n
+    - source: ../images
+      target: static/images
+    - source: static/images
+      target: static/images
+    - source: layouts
+      target: layouts
+    - source: static
+      target: static
+params:
+  themeVariant:
+    - auto
+    - relearn-bright
+    - relearn-light
+    - relearn-dark
+    - learn
+    - neon
+    - blue
+    - green
+    - red
+  themeVariantAuto:
+    - relearn-light
+    - relearn-dark
+  titleSeparator: '::'

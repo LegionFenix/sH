@@ -1,0 +1,29 @@
+{{- $page := .page }}
+{{- $title := "Поиск" }}
+          <article class="default">
+            <header class="headline">
+            </header>
+            <h1 id="{{ $title | anchorize }}">{{ $title }}</h1>
+
+            <form action="javascript:triggerSearch()">
+              <div class="searchform">
+                <label class="a11y-only" for="search-by-detail">{{ T "Поиск" }}</label>
+                <input data-search-input id="search-by-detail" class="search-by" name="search-by" type="search" placeholder="Поиск только по цифрам">
+                {{- partial "shortcodes/button.html" (dict
+                  "context" $page
+                  "type" "submit"
+                  "style" "secondary"
+                  "icon" "search"
+                  "content" (T "search")
+                )}}
+              </div>
+            </form>
+            <div class="searchhint">
+            </div>
+            <hr>
+            <div id="searchresults">
+            </div>
+
+            <footer class="footline">
+            </footer>
+          </article>
